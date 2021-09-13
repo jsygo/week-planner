@@ -4,6 +4,9 @@
 var $entryForm = document.querySelector('form');
 var $modalOverlay = document.querySelector('.overlay');
 var $addEntryButton = document.querySelector('.add-entry-button');
+var $tableNodeList = document.querySelectorAll('table');
+var $daySelectorNodeList = document.querySelectorAll('.day-selector');
+var $dayTabContainer = document.querySelector('.day-tabs');
 // var $submit = document.querySelectorAll('a');
 // var $submit = document.querySelector('#submit');
 
@@ -15,7 +18,7 @@ var $addEntryButton = document.querySelector('.add-entry-button');
 
 function formSubmitHandler(event) {
   event.preventDefault();
-  console.log('form submit');
+
   var entry = {
     day: $entryForm.elements.day.value,
     time: $entryForm.elements.day.value,
@@ -43,6 +46,10 @@ function formSubmitHandler(event) {
   // }
 }
 
+function clickTab(event) {
+
+}
+
 function addEntry(event) {
   $modalOverlay.setAttribute('class', 'overlay center-content');
 }
@@ -50,3 +57,4 @@ function addEntry(event) {
 $entryForm.addEventListener('submit', formSubmitHandler);
 
 $addEntryButton.addEventListener('click', addEntry);
+$dayTabContainer.addEventListener('click', clickTab);
