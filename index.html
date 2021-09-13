@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Week Planner</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="layout.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <div class="overlay">
-      <div class="modal">
+  <div class="overlay center-content">
+    <div class="modal border-radius-5px">
+      <div class="container">
         <div class="row">
           <h1>Add Entry</h1>
         </div>
@@ -24,7 +26,8 @@
             <option value="saturday">Saturday</option>
             <option value="sunday">Sunday</option>
           </select>
-          <select name="time" id="time-select">
+          <input type="time">
+          <!-- <select name="time" id="time-select">
             <option selected>Time</option>
             <option value="00:00">00:00</option>
             <option value="01:00">01:00</option>
@@ -50,16 +53,18 @@
             <option value="21:00">21:00</option>
             <option value="22:00">22:00</option>
             <option value="23:00">23:00</option>
-          </select>
+          </select> -->
         </div>
         <div class="row">
           <textarea id="description"></textarea>
         </div>
-        <div class="row">
+        <div class="row justify-end">
           <a><button>Submit</button></a>
         </div>
       </div>
     </div>
+  </div>
+  <div class="container">
     <div class="row">
       <div class="column-full justify-center">
         <h1>Weekly Planner</h1>

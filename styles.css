@@ -2,3 +2,32 @@
   display: flex;
   justify-content: center;
 }
+
+.overlay {
+  position: absolute;
+  background-color: rgba(10, 10, 10, 0.5);
+  height: 100vh;
+  width: 100vw;
+}
+
+.modal {
+  background-color: white;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.border-radius-5px {
+  border-radius: 5px;
+}
