@@ -1,17 +1,9 @@
-var data = {
-  sunday: [],
-  monday: [],
-  tuesday: [],
-  wednesday: [],
-  thursday: [],
-  friday: [],
-  saturday: [],
-  editing: null,
-  nextEntryId: 1
-};
+/* global data */
+/* exported data */
 
 var $entryForm = document.querySelector('form');
 var $modalOverlay = document.querySelector('.overlay');
+var $addEntryButton = document.querySelector('.add-entry-button');
 // var $submit = document.querySelectorAll('a');
 // var $submit = document.querySelector('#submit');
 
@@ -33,6 +25,7 @@ function formSubmitHandler(event) {
 
   entry.entryId = data.nextEntryId;
   data.nextEntryId++;
+  $entryForm.reset();
 
   for (var day in data) {
     // debugger;
@@ -50,4 +43,10 @@ function formSubmitHandler(event) {
   // }
 }
 
+function addEntry(event) {
+  $modalOverlay.setAttribute('class', 'overlay center-content');
+}
+
 $entryForm.addEventListener('submit', formSubmitHandler);
+
+$addEntryButton.addEventListener('click', addEntry);

@@ -1,3 +1,5 @@
+/* exported data */
+
 // var data = [{
 //   day: 'Monday',
 //   description: null,
