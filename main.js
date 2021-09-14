@@ -88,7 +88,12 @@ $addEntryButton.addEventListener('click', addEntry);
 $dayTabContainer.addEventListener('click', clickTab);
 
 function contentLoaded(event) {
-  for ()
+  for (var i = 0; i < $tbodyNodeList.length; i++) {
+    var dataEntryDay = data[$tbodyNodeList[i].getAttribute('class')];
+    for (var j = 0; j < dataEntryDay.length; j++) {
+      $tbodyNodeList[i].append(renderEntry(dataEntryDay[j]));
+    }
+  }
 }
 
 window.addEventListener('DOMContentLoaded', contentLoaded);
@@ -107,3 +112,5 @@ function renderEntry(entry) {
 
   return $tr;
 }
+
+// function generateEntriesList()
