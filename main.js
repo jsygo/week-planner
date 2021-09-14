@@ -8,7 +8,7 @@ var $tableNodeList = document.querySelectorAll('table');
 var $daySelectorNodeList = document.querySelectorAll('.day-selector');
 var $dayTabContainer = document.querySelector('.day-tabs');
 var $tableTitle = document.querySelector('h4');
-var $tbody = document.querySelector('tbody');
+var $tbodyNodeList = document.querySelectorAll('tbody');
 // var $submit = document.querySelectorAll('a');
 // var $submit = document.querySelector('#submit');
 
@@ -23,8 +23,8 @@ function formSubmitHandler(event) {
 
   var entry = {
     day: $entryForm.elements.day.value,
-    time: $entryForm.elements.day.value,
-    description: $entryForm.elements.day.value
+    time: $entryForm.elements.time.value,
+    description: $entryForm.elements.description.value
     // entryId: data.nextEntryId
   };
 
@@ -58,6 +58,15 @@ function clickTab(event) {
         $tableNodeList[i].setAttribute('class', 'hidden');
       }
     }
+    // for (var day in data) {
+    //   if (day === event.target.getAttribute('data-view')) {
+    //     for (var j = 0; j < $tbodyNodeList.length; j++) {
+    //       if ($tbodyNodeList[j].getAttribute('class') === event.target.getAttribute('data-view')) {
+    //         for ()
+    //       }
+    //     }
+    //   }
+    // }
   }
 }
 
@@ -78,11 +87,23 @@ $entryForm.addEventListener('submit', formSubmitHandler);
 $addEntryButton.addEventListener('click', addEntry);
 $dayTabContainer.addEventListener('click', clickTab);
 
-function renderEntry(event) {
+function contentLoaded(event) {
+  for ()
+}
+
+window.addEventListener('DOMContentLoaded', contentLoaded);
+
+function renderEntry(entry) {
   var $tr = document.createElement('tr');
   var $tdTime = document.createElement('td');
   var $tdDescription = document.createElement('td');
 
   $tr.append($tdTime, $tdDescription);
   console.log('$tr', $tr);
+
+  $tdTime.textContent = entry.time;
+
+  $tdDescription.textContent = entry.description;
+
+  return $tr;
 }
